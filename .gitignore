@@ -1,0 +1,39 @@
+# --- macOS ---
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.DocumentRevisions-V100
+.TemporaryItems
+
+# --- Secrets and sensitive data (never commit) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.mobileprovision
+id_rsa*
+id_ed25519*
+credentials.json
+service-account*.json
+google-services.json
+GoogleService-Info.plist
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+# Personal data exports: use synthetic fixtures instead
+*.sql.gz
+*.dump
+
+# --- Claude Code (local only) ---
+.claude/settings.local.json
+.claude/worktrees/
