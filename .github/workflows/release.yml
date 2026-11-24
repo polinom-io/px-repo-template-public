@@ -11,7 +11,7 @@ jobs:
   release-please:
     permissions:
       contents: read
-    uses: polinom-io/px-workflows-public/.github/workflows/release-please.yml@b40a04acb5f2282b124f9aecbf5b596cee8cfc56 # v0.1.0
+    uses: polinom-io/px-workflows-public/.github/workflows/release-please.yml@2e306475fe0169aa85e7f23057401ad4718e26f5 # v0.4.0
     with:
       app-client-id: ${{ vars.PX_RELEASE_PLEASE_APP_CLIENT_ID }}
     secrets:
