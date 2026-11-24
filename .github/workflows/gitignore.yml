@@ -12,4 +12,4 @@ jobs:
   gitignore:
     permissions:
       contents: read
-    uses: polinom-io/px-workflows-public/.github/workflows/gitignore-check.yml@fdf7ab470d2ed1a49d9b68842cb1f1327dcd3dd1 # v0.5.0
+    uses: polinom-io/px-workflows-public/.github/workflows/gitignore-check.yml@e3c491fee02c21fbe23300bc8d3f69f1cd0fa4c1 # v0.5.1
