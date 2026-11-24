@@ -1,4 +1,4 @@
-<!-- px-context v1.9.0. Synced from polinom-io/px-context; edit it there, not here. -->
+<!-- px-context v1.11.0. Synced from polinom-io/px-context; edit it there, not here. -->
 
 <!-- px-context:visibility=public -->
 # Engineering standards
@@ -47,7 +47,7 @@
 
 ## Releases
 
-- Every repo releases with release-please (`googleapis/release-please-action@v4`) using `release-please-config.json` and `.release-please-manifest.json`, with `include-component-in-tag: false` so tags are `vX.Y.Z`. It keeps a release PR open with the version bump and CHANGELOG; merging it tags, creates the GitHub release and triggers publishing. Only `feat`, `fix`, `perf`, `revert` and breaking changes produce a release; `docs`, `chore`, `ci` and the rest don't.
+- Every repo releases with release-please (`googleapis/release-please-action@v4`) using `release-please-config.json` and `.release-please-manifest.json`, with `include-component-in-tag: false` so tags are `vX.Y.Z`. It keeps a release PR open with the version bump and CHANGELOG; merging it tags, creates the GitHub release and triggers publishing. Only `feat`, `fix`, `perf`, `revert` and breaking changes produce a release; `docs`, `chore`, `ci` and the rest don't. New repos start with `"initial-version": "0.1.0"` and `"bump-minor-pre-major": true` in `release-please-config.json`; without them the first release, or the first `feat!:` on 0.x, is 1.0.0. Going to 1.0.0 is a deliberate `Release-As: 1.0.0` commit.
 - Never bump versions, edit `CHANGELOG.md`, push tags or create GitHub releases by hand. To force a version, put `Release-As: x.y.z` in a commit body.
 - release-please authenticates with the org's GitHub App installation token (`actions/create-github-app-token`), never `GITHUB_TOKEN` or a personal token. Its `release-please--**` branches are the only ones it may force-push; never force-push them by hand.
 - Agents never approve workflow runs or re-run a workflow to get past an approval gate: ask a human with write access.
