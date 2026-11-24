@@ -9,6 +9,8 @@ permissions:
 
 jobs:
   release-please:
+    # The template repo never releases: repos created from it start at 0.1.0.
+    if: ${{ !github.event.repository.is_template }}
     permissions:
       contents: read
     uses: polinom-io/px-workflows-public/.github/workflows/release-please.yml@2e306475fe0169aa85e7f23057401ad4718e26f5 # v0.4.0
