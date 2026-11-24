@@ -1,4 +1,4 @@
-<!-- px-context v1.11.0. Synced from polinom-io/px-context; edit it there, not here. -->
+<!-- px-context v1.12.0. Synced from polinom-io/px-context; edit it there, not here. -->
 
 <!-- px-context:visibility=public -->
 # Engineering standards
@@ -60,6 +60,7 @@
 - GitHub Actions only. Secrets in org/repo secrets, never in workflow files.
 - Workflows that commit or open PRs use `GITHUB_TOKEN` or a GitHub App token with signed commits (e.g. `sign-commits: true` in `peter-evans/create-pull-request`), never a personal access token: commits made with a personal token are unsigned and get blocked.
 - Cloud deploys use OIDC (`id-token: write`), not long-lived keys.
+- Reusable workflow first: before adding any workflow to a repo, decide whether it belongs in the org's shared workflow repos. If a shared workflow covers the job, call it pinned by full commit SHA with a `# vX.Y.Z` comment instead of copying it. If the job is generic (stack CI, release, audits, security scans) and none covers it yet, create it there first, then call it; never copy it into the repo "for now". A workflow that stays local says why in its PR (repo-specific logic). Pass each secret explicitly, never `secrets: inherit`.
 
 ## Tech stacks
 
