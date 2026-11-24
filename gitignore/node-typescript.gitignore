@@ -1,0 +1,8 @@
+# --- Stack: node-typescript ---
+node_modules/
+.pnpm-store/
+dist/
+coverage/
+*.tsbuildinfo
+npm-debug.log*
+pnpm-debug.log*

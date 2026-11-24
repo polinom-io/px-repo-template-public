@@ -9,6 +9,10 @@
 .DocumentRevisions-V100
 .TemporaryItems
 
+# --- Claude Code (local only) ---
+.claude/settings.local.json
+.claude/worktrees/
+
 # --- Secrets and sensitive data (never commit) ---
 .env
 .env.*
@@ -33,7 +37,3 @@ GoogleService-Info.plist
 # Personal data exports: use synthetic fixtures instead
 *.sql.gz
 *.dump
-
-# --- Claude Code (local only) ---
-.claude/settings.local.json
-.claude/worktrees/
