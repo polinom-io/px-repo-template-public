@@ -1,4 +1,4 @@
-<!-- Polinom.io shared AI context v1.18.0. Managed centrally; don't edit it here. -->
+<!-- Polinom.io shared AI context v1.20.0. Managed centrally; don't edit it here. -->
 
 # Engineering standards
 
@@ -12,11 +12,12 @@
     - project-overview.md (repo-owned, not synced: what the product does, users, architecture)
     - business-rules.md (repo-owned, not synced: domain rules the code must keep)
 
-- Load `.ai/` context lazily. CLAUDE.md @-imports only `.ai/global.md` and `.ai/data-and-security.md` (public repos: only `.ai/global.md`). AGENTS.md lists the other `.ai/` files, each with a "read when" trigger, and you read a file when its trigger applies:
+- Load `.ai/` context lazily. CLAUDE.md @-imports only `.ai/global.md`, `.ai/engineering/engineering.md` (commit, signing and branch rules apply to almost every session) and, in private repos, `.ai/data-and-security.md`. AGENTS.md lists the other `.ai/` files, each with a "read when" trigger, and you read a file when its trigger applies:
   - `project-overview.md`: before planning, scoping or explaining work in this repo.
   - `business-rules.md`: before changing domain logic, data models or validations.
-  - `engineering/engineering.md`: before commits, PRs, branches, releases or CI.
+  - `engineering/security-rules.md` (private repos): before touching auth, secrets, dependencies, CI permissions or personal data.
   - `engineering/tech-stacks/tech-stacks.md`, then the stack files present: before writing or reviewing code.
+  - `engineering/testing-guidelines.md`: before writing tests or a PR test plan.
   - `engineering/cloud-providers/aws.md`: before AWS work.
   - `brand-internal.md`: before customer-facing text or documents.
   - `company-internal.md`: before invoices, contracts or account questions.
@@ -28,7 +29,7 @@
 - Types: feat, fix, perf, refactor, docs, test, build, ci, chore, style, revert. `!` or `BREAKING CHANGE:` = major.
 - Squash-merge only. The PR title must be a valid conventional commit; branch commits are free-form.
 - One logical change per PR. If the title needs "and", split it.
-- The PR body follows the org pull request template: `## Summary`, `## Test plan` (never empty; say what was not tested), `## Checklist` with every item, and `## After merge` when someone must act manually, then `Refs #N` / `Closes #N` when an issue tracks the work. Tick a checklist item only when true and link its evidence when one exists (CI run, scan, screenshot); mark one that doesn't apply "n/a" with a reason. `gh pr create --body` skips the template, so write those sections yourself. Bots (release-please, context sync, Dependabot) are exempt.
+- The PR body follows the org pull request template: `## Summary`, `## Test plan` (never empty; say what was not tested), `## Checklist` with every item, and `## After merge` when someone must act manually, then `Refs #N` / `Closes #N` when an issue tracks the work. Tick a checklist item only when true and link its evidence when one exists (CI run, scan, screenshot); mark one that doesn't apply "n/a" with a reason. `gh pr create --body` skips the template: fetch it first (`gh api repos/polinom-io/.github/contents/.github/pull_request_template.md`) and copy its sections and checklist items word for word; the pr-standard check matches the exact item text. Write the body to a file and pass `--body-file` (gh api: `-F body=@<file>`); on laptops set up by px-context, a Claude Code hook runs the pr-standard checks first and blocks a non-compliant title or body. Where that hook is not installed (cloud sessions, other agents), run the same checks yourself before creating or editing the PR: `title_problems()` and `body_problems()` from px-context `scripts/hooks/check-pr-standard.py` must both return nothing. Bots (release-please, context sync, Dependabot) are exempt.
 
 ## Branches
 

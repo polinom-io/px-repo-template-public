@@ -1,4 +1,4 @@
-<!-- Polinom.io shared AI context v1.18.0. Managed centrally; don't edit it here. -->
+<!-- Polinom.io shared AI context v1.20.0. Managed centrally; don't edit it here. -->
 
 # Polinom.io — global defaults
 
