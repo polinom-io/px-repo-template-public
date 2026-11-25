@@ -1,4 +1,4 @@
-<!-- Polinom.io shared AI context v1.16.0. Managed centrally; don't edit it here. -->
+<!-- Polinom.io shared AI context v1.17.0. Managed centrally; don't edit it here. -->
 
 # Engineering standards
 
@@ -76,5 +76,5 @@
 - Every repo declares its stacks as GitHub topics (`stack-<name>`); the sync copies only those stack files into `.ai/engineering/tech-stacks/`. Read the ones present before working in a repo, starting with `tech-stacks.md`.
 
 ## Code style
-- Lint/format with the shared configs (today the legacy `@polinom.io/eslint-config` and `@polinom.io/prettier-config`; `@polinom-io/*` once republished); don't restate their rules.
+- Lint/format with Biome using the shared `@polinom-io/biome-config`; don't restate its rules. Never add ESLint or Prettier, or the archived `@polinom.io/eslint-config` and `@polinom.io/prettier-config`.
 - Tests and fixtures use synthetic data only.
