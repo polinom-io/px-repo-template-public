@@ -1,4 +1,4 @@
-<!-- Polinom.io shared AI context v1.17.0. Managed centrally; don't edit it here. -->
+<!-- Polinom.io shared AI context v1.18.0. Managed centrally; don't edit it here. -->
 
 # Engineering standards
 
@@ -9,8 +9,18 @@
   - .gitignore
   - CODEOWNERS
   - .ai folder with
-    - project-overview.md
-    - business-rules.md
+    - project-overview.md (repo-owned, not synced: what the product does, users, architecture)
+    - business-rules.md (repo-owned, not synced: domain rules the code must keep)
+
+- Load `.ai/` context lazily. CLAUDE.md @-imports only `.ai/global.md` and `.ai/data-and-security.md` (public repos: only `.ai/global.md`). AGENTS.md lists the other `.ai/` files, each with a "read when" trigger, and you read a file when its trigger applies:
+  - `project-overview.md`: before planning, scoping or explaining work in this repo.
+  - `business-rules.md`: before changing domain logic, data models or validations.
+  - `engineering/engineering.md`: before commits, PRs, branches, releases or CI.
+  - `engineering/tech-stacks/tech-stacks.md`, then the stack files present: before writing or reviewing code.
+  - `engineering/cloud-providers/aws.md`: before AWS work.
+  - `brand-internal.md`: before customer-facing text or documents.
+  - `company-internal.md`: before invoices, contracts or account questions.
+  - `company-public.md` (public repos): before describing Polinom.io publicly.
 
 ## Commits and PRs
 
