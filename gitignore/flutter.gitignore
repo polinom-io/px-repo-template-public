@@ -1,13 +1,20 @@
 # --- Stack: flutter ---
+# Dart and Flutter tool outputs
 .dart_tool/
-build/
-.flutter-plugins
-.flutter-plugins-dependencies
 .packages
 .pub-cache/
 .pub/
-ios/Pods/
-android/.gradle/
-*.iml
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
 # Flutter SDK installed by fvm (version pinned in .fvmrc)
 .fvm/
+# iOS and Android native build outputs
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/ephemeral/
+android/.gradle/
+android/local.properties
+# IDE
+*.iml
+.idea/
