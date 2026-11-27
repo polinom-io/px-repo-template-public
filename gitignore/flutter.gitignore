@@ -18,3 +18,13 @@ android/local.properties
 # IDE
 *.iml
 .idea/
+# Flutter-generated files
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+ios/Runner/GeneratedPluginRegistrant.*
+android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+*.apk
+*.aab
+*.ipa
+*.xcarchive
+.kotlin/
