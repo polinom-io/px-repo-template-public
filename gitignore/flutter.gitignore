@@ -1,0 +1,13 @@
+# --- Stack: flutter ---
+.dart_tool/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+ios/Pods/
+android/.gradle/
+*.iml
+# Flutter SDK installed by fvm (version pinned in .fvmrc)
+.fvm/
