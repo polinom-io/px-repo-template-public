@@ -1,0 +1,18 @@
+# --- Stack: kotlin-android ---
+# Gradle and build outputs
+.gradle/
+build/
+.kotlin/
+.cxx/
+.externalNativeBuild/
+captures/
+# Local machine config (SDK path)
+local.properties
+# Release artifacts
+*.apk
+*.aab
+*.aar
+*.hprof
+# IDE
+.idea/
+*.iml
